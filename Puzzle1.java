@@ -48,7 +48,7 @@ public class Puzzle1
         return max1+max2+max3;
     }
     
-    public int puzzle2() throws FileNotFoundException
+    public int puzzle1() throws FileNotFoundException
     {
         // put your code here
         File input = new File ("Input.txt");
