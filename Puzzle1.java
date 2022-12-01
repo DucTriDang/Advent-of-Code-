@@ -5,25 +5,7 @@ import java.io.FileNotFoundException;
 
 public class Puzzle1
 {
-    // instance variables - replace the example below with your own
-    
-
-    /**
-     * Constructor for objects of class d
-     */
-    public Puzzle1()
-    {
-        // initialise instance variables
-        
-    }
-
-    /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-    public int sampleMethod() throws FileNotFoundException
+    public int puzzle2() throws FileNotFoundException
     {
         // put your code here
         File input = new File ("Input.txt");
@@ -37,7 +19,7 @@ public class Puzzle1
             String command = s.nextLine();
             if (command.equals(""))
             {
-                System.out.println(sum+" "+max1+" "+max2+" "+max3);
+                
                 if (sum>=max1)
                 {
                     max3=max2;
@@ -60,13 +42,36 @@ public class Puzzle1
             }
             else
             {
-                //System.out.println(Integer.parseInt(command));
                 sum+=Integer.parseInt(command);
             }
         }
-        System.out.println(max1);
-        System.out.println(max2);
-        System.out.println(max3);
         return max1+max2+max3;
+    }
+    
+    public int puzzle2() throws FileNotFoundException
+    {
+        // put your code here
+        File input = new File ("Input.txt");
+        Scanner s = new Scanner(input);
+        int sum=0;
+        int max1=-1;
+
+        while(s.hasNext()) 
+        {
+            String command = s.nextLine();
+            if (command.equals(""))
+            {
+                if (sum>=max)
+                {
+                    max=sum;
+                }
+                sum=0;
+            }
+            else
+            {
+                sum+=Integer.parseInt(command);
+            }
+        }
+        return max;
     }
 }
